@@ -1,1 +1,1 @@
-cmd_Release/bitcoin_keys.node := c++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.15 -arch x86_64 -L./Release -stdlib=libc++  -o Release/bitcoin_keys.node Release/obj.target/bitcoin_keys/bitcoin_keys.o -lsecp256k1
+cmd_Release/bitcoin_keys.node := ln -f "Release/obj.target/bitcoin_keys.node" "Release/bitcoin_keys.node" 2>/dev/null || (rm -rf "Release/bitcoin_keys.node" && cp -af "Release/obj.target/bitcoin_keys.node" "Release/bitcoin_keys.node")

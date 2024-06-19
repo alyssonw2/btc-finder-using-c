@@ -1,0 +1,1 @@
+cmd_Release/obj.target/bitcoin_keys.node := g++ -o Release/obj.target/bitcoin_keys.node -shared -pthread -rdynamic -m64  -Wl,-soname=bitcoin_keys.node -Wl,--start-group Release/obj.target/bitcoin_keys/bitcoin_keys.o -Wl,--end-group -lsecp256k1

@@ -1,5 +1,5 @@
 ﻿import ranges from './ranges.js'
-import criarProcesso from './bitcoin-find.js'
+import encontrarBitcoins from './bitcoin-find.js'
 import readline from 'readline'
 import chalk from 'chalk'
 
@@ -50,21 +50,21 @@ rl.question(`Escolha uma carteira puzzle( ${chalk.cyan(1)} - ${chalk.cyan(160)})
                 min = BigInt(min) + BigInt(percentualRange);
                 console.log('Comecando em: ', chalk.yellow('0x' + min.toString(16)));
                 key = BigInt(min)
-                criarProcesso(key, min, max)
+                encontrarBitcoins(key, min, max)
                 rl.close();
             });
         } else if (answer2 == '3') {
             rl.question('Entre o minimo: ', async (answer3) => {
                 min = BigInt(answer3)
                 key = BigInt(min)
-                criarProcesso(key, min, max)
+                encontrarBitcoins(key, min, max)
                 rl.close();
             });
         } else {
 
             min = BigInt(min)
 
-            criarProcesso(key, min, max)
+            encontrarBitcoins(key, min, max)
             rl.close();
 
         }

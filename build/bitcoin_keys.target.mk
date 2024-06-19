@@ -7,109 +7,86 @@ DEFS_Debug := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
-	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
-	'-D_DEBUG' \
-	'-DV8_ENABLE_CHECKS'
+	'-D_DEBUG'
 
 # Flags passed to all source files.
 CFLAGS_Debug := \
-	-O0 \
-	-gdwarf-2 \
-	-mmacosx-version-min=10.15 \
-	-arch x86_64 \
+	-fPIC \
+	-pthread \
 	-Wall \
-	-Wendif-labels \
-	-W \
-	-Wno-unused-parameter
+	-Wextra \
+	-Wno-unused-parameter \
+	-m64 \
+	-g \
+	-O0
 
 # Flags passed to only C files.
-CFLAGS_C_Debug := \
-	-fno-strict-aliasing
+CFLAGS_C_Debug :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
-	-std=gnu++17 \
-	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-exceptions \
-	-fno-strict-aliasing
-
-# Flags passed to only ObjC files.
-CFLAGS_OBJC_Debug :=
-
-# Flags passed to only ObjC++ files.
-CFLAGS_OBJCC_Debug :=
+	-std=gnu++17
 
 INCS_Debug := \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/include/node \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/src \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/openssl/config \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/openssl/openssl/include \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/uv/include \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/zlib \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/v8/include
+	-I/home/pc/.cache/node-gyp/20.11.1/include/node \
+	-I/home/pc/.cache/node-gyp/20.11.1/src \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/openssl/config \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/openssl/openssl/include \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/uv/include \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/zlib \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=bitcoin_keys' \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
-	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION'
 
 # Flags passed to all source files.
 CFLAGS_Release := \
-	-O3 \
-	-gdwarf-2 \
-	-mmacosx-version-min=10.15 \
-	-arch x86_64 \
+	-fPIC \
+	-pthread \
 	-Wall \
-	-Wendif-labels \
-	-W \
-	-Wno-unused-parameter
+	-Wextra \
+	-Wno-unused-parameter \
+	-m64 \
+	-O3 \
+	-fno-omit-frame-pointer
 
 # Flags passed to only C files.
-CFLAGS_C_Release := \
-	-fno-strict-aliasing
+CFLAGS_C_Release :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
-	-std=gnu++17 \
-	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-exceptions \
-	-fno-strict-aliasing
-
-# Flags passed to only ObjC files.
-CFLAGS_OBJC_Release :=
-
-# Flags passed to only ObjC++ files.
-CFLAGS_OBJCC_Release :=
+	-std=gnu++17
 
 INCS_Release := \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/include/node \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/src \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/openssl/config \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/openssl/openssl/include \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/uv/include \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/zlib \
-	-I/Users/renata/Library/Caches/node-gyp/18.15.0/deps/v8/include
+	-I/home/pc/.cache/node-gyp/20.11.1/include/node \
+	-I/home/pc/.cache/node-gyp/20.11.1/src \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/openssl/config \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/openssl/openssl/include \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/uv/include \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/zlib \
+	-I/home/pc/.cache/node-gyp/20.11.1/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/bitcoin_keys.o
@@ -122,8 +99,6 @@ all_deps += $(OBJS)
 $(OBJS): TOOLSET := $(TOOLSET)
 $(OBJS): GYP_CFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_C_$(BUILDTYPE))
 $(OBJS): GYP_CXXFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_CC_$(BUILDTYPE))
-$(OBJS): GYP_OBJCFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_C_$(BUILDTYPE)) $(CFLAGS_OBJC_$(BUILDTYPE))
-$(OBJS): GYP_OBJCXXFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_CC_$(BUILDTYPE)) $(CFLAGS_OBJCC_$(BUILDTYPE))
 
 # Suffix rules, putting all outputs into $(obj).
 
@@ -141,47 +116,38 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cpp FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 LDFLAGS_Debug := \
-	-undefined dynamic_lookup \
-	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.15 \
-	-arch x86_64 \
-	-L$(builddir) \
-	-stdlib=libc++
-
-LIBTOOLFLAGS_Debug := \
-	-undefined dynamic_lookup \
-	-Wl,-search_paths_first
+	-pthread \
+	-rdynamic \
+	-m64
 
 LDFLAGS_Release := \
-	-undefined dynamic_lookup \
-	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.15 \
-	-arch x86_64 \
-	-L$(builddir) \
-	-stdlib=libc++
-
-LIBTOOLFLAGS_Release := \
-	-undefined dynamic_lookup \
-	-Wl,-search_paths_first
+	-pthread \
+	-rdynamic \
+	-m64
 
 LIBS := \
 	-lsecp256k1
 
-$(builddir)/bitcoin_keys.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
-$(builddir)/bitcoin_keys.node: LIBS := $(LIBS)
-$(builddir)/bitcoin_keys.node: GYP_LIBTOOLFLAGS := $(LIBTOOLFLAGS_$(BUILDTYPE))
-$(builddir)/bitcoin_keys.node: TOOLSET := $(TOOLSET)
-$(builddir)/bitcoin_keys.node: $(OBJS) FORCE_DO_CMD
+$(obj).target/bitcoin_keys.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
+$(obj).target/bitcoin_keys.node: LIBS := $(LIBS)
+$(obj).target/bitcoin_keys.node: TOOLSET := $(TOOLSET)
+$(obj).target/bitcoin_keys.node: $(OBJS) FORCE_DO_CMD
 	$(call do_cmd,solink_module)
 
-all_deps += $(builddir)/bitcoin_keys.node
+all_deps += $(obj).target/bitcoin_keys.node
 # Add target alias
 .PHONY: bitcoin_keys
 bitcoin_keys: $(builddir)/bitcoin_keys.node
 
+# Copy this to the executable output path.
+$(builddir)/bitcoin_keys.node: TOOLSET := $(TOOLSET)
+$(builddir)/bitcoin_keys.node: $(obj).target/bitcoin_keys.node FORCE_DO_CMD
+	$(call do_cmd,copy)
+
+all_deps += $(builddir)/bitcoin_keys.node
 # Short alias for building this executable.
 .PHONY: bitcoin_keys.node
-bitcoin_keys.node: $(builddir)/bitcoin_keys.node
+bitcoin_keys.node: $(obj).target/bitcoin_keys.node $(builddir)/bitcoin_keys.node
 
 # Add executable to "all" target.
 .PHONY: all
